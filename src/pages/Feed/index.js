@@ -29,7 +29,7 @@ export default function Feed() {
               </div>
               <img src={more} alt="more" />
             </header>
-            <img src={`http://localhost:3333/files/${post.image}`} alt="" />
+            <img src={`${post.image}`} alt="" />
             <footer>
               <div className="actions">
                 <img src={like} alt="like" />
