@@ -17,6 +17,10 @@ export default function Feed() {
     });
   });
 
+  async function handleLike(id) {
+    await api.post(`posts/${id}/like`);
+  }
+
   return (
     <section id="post-list">
       {feed &&
@@ -32,7 +36,9 @@ export default function Feed() {
             <img src={`${post.image}`} alt="" />
             <footer>
               <div className="actions">
-                <img src={like} alt="like" />
+                <button type="button" onClick={() => handleLike(post._id)}>
+                  <img src={like} alt="like" />
+                </button>
                 <img src={comment} alt="comment" />
                 <img src={send} alt="send" />
               </div>
