@@ -25,8 +25,8 @@ export default function New() {
     data.append("description", description);
     data.append("hashtags", hashtags);
 
-    await api.post("posts", data);
-
+    const result = await api.post("posts", data);
+    console.log(result);
     history.push("/");
   }
 
