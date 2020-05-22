@@ -26,8 +26,12 @@ export default function New() {
     data.append("hashtags", hashtags);
 
     const result = await api.post("posts", data);
-    console.log(result);
-    history.push("/");
+    if (result.data.fail == null) {
+      alert("Sucesso no Upload do arquivo.");
+      history.push("/");
+    } else {
+      alert(result.data.fail);
+      history.push("/");
   }
 
   return (
