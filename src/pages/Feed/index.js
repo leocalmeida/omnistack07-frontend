@@ -19,8 +19,8 @@ export default function Feed() {
   }, []);
 
   function registerToNewActivity() {
-    // const socket = io("https://omnistack07-backend.herokuapp.com/");
-    const socket = io("http://localhost:3334");
+    const socket = io("https://omnistack07-backend.herokuapp.com/");
+    // const socket = io("http://localhost:3334");
 
     socket.on("post", (newPost) => {
       feed && setFeed([newPost, ...feed]);
