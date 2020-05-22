@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./header.css";
 
-import logo from "../assets/logo.svg";
+import logo from "../assets/logo.png";
 import camera from "../assets/camera.svg";
 
 export default function Header() {
