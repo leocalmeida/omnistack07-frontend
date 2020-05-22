@@ -18,3 +18,6 @@ Resultado da utilização do [Socket.IO](https://socket.io/), [UseEffect](https:
 
 
 *IMPORTANTE: Por motivos de segurança, o upload de arquivos está bloqueado.*
+
+PREVIEW:
+![Preview](https://res.cloudinary.com/almleoc/image/upload/v1590160729/README.md/OmniStack07/Preview_euql5v.jpg "Preview")
