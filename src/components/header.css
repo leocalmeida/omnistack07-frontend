@@ -15,3 +15,6 @@ header#main-header .header-content {
   justify-content: space-between;
   align-items: center;
 }
+#logo {
+  height: 72px;
+}
