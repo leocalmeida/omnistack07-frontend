@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import api from "../../services/api";
+import io from "socket.io-client";
 
 import "./styles.css";
 
@@ -15,12 +16,33 @@ export default function Feed() {
     api.get("posts").then((response) => {
       setFeed(response.data);
     });
-  });
+  }, []);
+
+  function registerToNewActivity() {
+    // const socket = io("https://omnistack07-backend.herokuapp.com/");
+    const socket = io("http://localhost:3334");
+
+    socket.on("post", (newPost) => {
+      feed && setFeed([newPost, ...feed]);
+    });
+
+    socket.on("like", (likedPost) => {
+      feed &&
+        setFeed(
+          feed.map((post) =>
+            post._id === likedPost._id
+              ? { ...post, likes: likedPost.likes }
+              : post
+          )
+        );
+    });
+  }
 
   async function handleLike(id) {
     await api.post(`posts/${id}/like`);
   }
 
+  registerToNewActivity();
   return (
     <section id="post-list">
       {feed &&
