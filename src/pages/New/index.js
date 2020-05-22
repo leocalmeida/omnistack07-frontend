@@ -32,6 +32,7 @@ export default function New() {
     } else {
       alert(result.data.fail);
       history.push("/");
+    }
   }
 
   return (
